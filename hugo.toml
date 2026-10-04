@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://techatpark.github.io/ariv_foundation_website/"
 languageCode = "en-IN"
 title = "Ariv Foundation"
 enableRobotsTXT = true
