@@ -1,0 +1,44 @@
+baseURL = "/"
+languageCode = "en-IN"
+title = "Ariv Foundation"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS"]
+
+# Public inbox. Leave empty until the foundation has an address to publish.
+# email = "hello@example.org"
+
+[params]
+  description = "Ariv Foundation opens technology, education, and skill-building to people of every social and economic background."
+  email = "thearivfundation@gmail.com"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]
+
+[[menus.main]]
+  name = "About"
+  pageRef = "/about"
+  weight = 10
+
+[[menus.main]]
+  name = "Work"
+  pageRef = "/work"
+  weight = 20
+
+[[menus.main]]
+  name = "Collaborate"
+  pageRef = "/collaborate"
+  weight = 30
+
+[[menus.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 40

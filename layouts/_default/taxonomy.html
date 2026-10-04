@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <header class="page-hero">
+    <div class="wrap page-hero-inner">
+      <h1>{{ .Title }}</h1>
+    </div>
+  </header>
+  <div class="wrap prose-wrap">
+    <ul class="plain-list">
+      {{- range .Pages -}}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end -}}
+    </ul>
+  </div>
+{{ end }}

@@ -1,0 +1,105 @@
+{{ define "main" }}
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span lang="ta">அறிவு</span> means knowledge</p>
+        <h1>An open door to technology and education.</h1>
+        <p class="lede">
+          Ariv Foundation is incorporated so that a person’s social or economic background does not decide whether they can learn, build, and take part. The work is practical: open-source platforms, free and low-cost study material, training, public media, and gatherings.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="{{ "work/" | relURL }}">See the work</a>
+          <a class="btn btn-line" href="{{ "about/" | relURL }}#objects">Objects of the company</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="What the foundation holds open">
+        <p class="hero-panel-label">Held open</p>
+        <ol>
+          <li>Open-source communities</li>
+          <li>School and engineering study</li>
+          <li>Training and vocation</li>
+          <li>Public events and media</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Where to start</p>
+        <h2>Three ways into the work.</h2>
+      </div>
+      <div class="door-grid">
+        <article class="door">
+          <p class="door-kicker">Students</p>
+          <h3>School syllabi and engineering notes.</h3>
+          <p>Standard XI and XII physics, and computer science notes, are published on Gurukulams.</p>
+          <p class="door-links">
+            <a href="{{ "work/tn-ebooks/" | relURL }}">TN eBooks</a>
+            <a href="{{ "work/cse-notes/" | relURL }}">CSE notes</a>
+          </p>
+        </article>
+        <article class="door">
+          <p class="door-kicker">Contributors</p>
+          <h3>Platforms, communities, and a public gathering.</h3>
+          <p>DevCarnival is 8–9 January 2027 in Chennai. The Open Source Lab is where the platforms are maintained.</p>
+          <p class="door-links">
+            <a href="{{ "work/open-source-lab/" | relURL }}">Open Source Lab</a>
+            <a href="{{ "work/devcarnival/" | relURL }}">DevCarnival</a>
+          </p>
+        </article>
+        <article class="door">
+          <p class="door-kicker">Institutions</p>
+          <h3>Teach, research, and train with Ariv.</h3>
+          <p>Universities and other educational bodies can join the work, including through a consortium of teachers and campuses.</p>
+          <p class="door-links">
+            <a href="{{ "collaborate/" | relURL }}">Collaborate</a>
+            <a href="{{ "work/training-centres/" | relURL }}">Training centres</a>
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-warm">
+    <div class="wrap split">
+      <div class="split-intro">
+        <p class="eyebrow">The work</p>
+        <h2>Named initiatives, and the rooms around them.</h2>
+        <p>
+          DevCarnival, the Open Source Lab, and TN eBooks are named in the company’s objects. Training, media, and gatherings carry the rest of the mission.
+        </p>
+        <a class="text-link" href="{{ "work/" | relURL }}">All of the work</a>
+      </div>
+      {{ with .Site.GetPage "/work" }}
+        {{ partial "work-items.html" . }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="wrap statement-inner">
+      <p class="eyebrow">Object one</p>
+      <blockquote>
+        <p>To promote equal opportunity for all individuals, irrespective of social or economic background, by enabling access to technology, education, and skill-development resources.</p>
+      </blockquote>
+      <a class="text-link light" href="{{ "about/" | relURL }}#objects">Read all seven objects</a>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap invite">
+      <div>
+        <p class="eyebrow">With institutions</p>
+        <h2>Education, research, and skill, done with others.</h2>
+      </div>
+      <div class="invite-copy">
+        <p>
+          The company is set up to collaborate with universities, academic institutions, and other educational bodies — and to bring institutions and individuals into a consortium where one campus cannot reach everyone.
+        </p>
+        <a class="btn btn-clay" href="{{ "collaborate/" | relURL }}">How collaboration works</a>
+      </div>
+    </div>
+  </section>
+{{ end }}

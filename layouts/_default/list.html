@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <header class="page-hero">
+    <div class="wrap page-hero-inner">
+      <p class="eyebrow">Ariv Foundation</p>
+      <h1>{{ .Title }}</h1>
+      {{- with .Description -}}
+        <p class="lede">{{ . }}</p>
+      {{- end -}}
+    </div>
+  </header>
+  <div class="wrap prose-wrap">
+    <div class="prose">{{ .Content }}</div>
+    {{- if .Pages -}}
+      <ul class="plain-list">
+        {{- range .Pages.ByWeight -}}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- end -}}
+      </ul>
+    {{- end -}}
+  </div>
+{{ end }}

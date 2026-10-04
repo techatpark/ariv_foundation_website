@@ -1,0 +1,14 @@
+{{ define "title" }}Page not found | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+  <header class="page-hero">
+    <div class="wrap page-hero-inner">
+      <p class="eyebrow">404</p>
+      <h1>This page is not on the site.</h1>
+      <p class="lede">The address may have changed. The work of the foundation is still on the home page and in the list of initiatives.</p>
+      <div class="hero-actions">
+        <a class="btn btn-clay" href="{{ .Site.Home.RelPermalink }}">Home</a>
+        <a class="btn btn-line dark" href="{{ "work/" | relURL }}">The work</a>
+      </div>
+    </div>
+  </header>
+{{ end }}

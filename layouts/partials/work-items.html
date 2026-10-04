@@ -1,0 +1,14 @@
+<ol class="work-list">
+  {{- range $index, $page := .Pages.ByWeight -}}
+    <li id="{{ $page.File.BaseFileName }}">
+      <a href="{{ $page.RelPermalink }}">
+        <span class="idx">{{ printf "%02d" (add $index 1) }}</span>
+        <span class="work-copy">
+          <h3>{{ $page.Title }}</h3>
+          <p>{{ $page.Description }}</p>
+        </span>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+    </li>
+  {{- end -}}
+</ol>

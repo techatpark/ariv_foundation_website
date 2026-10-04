@@ -1,0 +1,17 @@
+{{- $dest := .Destination -}}
+{{- $fragment := "" -}}
+{{- if strings.Contains $dest "#" -}}
+  {{- $parts := split $dest "#" -}}
+  {{- $dest = index $parts 0 -}}
+  {{- $fragment = printf "#%s" (index $parts 1) -}}
+{{- end -}}
+{{- if strings.HasPrefix $dest "/" -}}
+  {{- $path := strings.TrimPrefix "/" $dest -}}
+  {{- if eq $path "" -}}
+    {{- $dest = .Page.Site.Home.RelPermalink -}}
+  {{- else -}}
+    {{- $dest = $path | relURL -}}
+  {{- end -}}
+{{- end -}}
+{{- $external := or (strings.HasPrefix $dest "http://") (strings.HasPrefix $dest "https://") -}}
+<a href="{{ printf "%s%s" $dest $fragment | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Text | safeHTML }}</a>

@@ -1,0 +1,43 @@
+{{ define "main" }}
+  <article>
+    <header class="page-hero">
+      <div class="wrap page-hero-inner">
+        <p class="eyebrow">
+          {{- if .Params.object -}}
+            {{ .Params.object }}
+          {{- else if eq .Section "work" -}}
+            Work
+          {{- else -}}
+            Ariv Foundation
+          {{- end -}}
+        </p>
+        <h1>{{ .Title }}</h1>
+        {{- with .Description -}}
+          <p class="lede">{{ . }}</p>
+        {{- end -}}
+      </div>
+    </header>
+    <div class="wrap prose-wrap">
+      <div class="prose">
+        {{ .Content }}
+        {{- if and .File (eq .File.BaseFileName "contact") -}}
+          {{- with .Site.Params.email -}}
+            <p class="email-line"><span>Email</span> <a href="mailto:{{ . }}">{{ . }}</a></p>
+          {{- end -}}
+        {{- end -}}
+      </div>
+      {{- if eq .Section "work" -}}
+        <aside class="more-work" aria-label="Other work">
+          <h2>Also in the work</h2>
+          <ul>
+            {{- range (where .Site.RegularPages "Section" "work").ByWeight -}}
+              {{- if ne .RelPermalink $.RelPermalink -}}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+              {{- end -}}
+            {{- end -}}
+          </ul>
+        </aside>
+      {{- end -}}
+    </div>
+  </article>
+{{ end }}
