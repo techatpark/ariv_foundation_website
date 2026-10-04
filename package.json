@@ -1,0 +1,10 @@
+{
+  "name": "ariv-foundation",
+  "private": true,
+  "scripts": {
+    "build": "hugo --minify"
+  },
+  "dependencies": {
+    "hugo-bin": "0.165.0"
+  }
+}
