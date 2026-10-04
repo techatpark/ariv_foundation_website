@@ -10,7 +10,7 @@ hugo server --disableFastRender
 
 ## Public email
 
-When the foundation has an address to publish, set it in `config.toml`:
+When the foundation has an address to publish, set it in `hugo.toml`:
 
 ```toml
 [params]
